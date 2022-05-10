@@ -1,4 +1,3 @@
-import { WINDOW } from '@ng-toolkit/universal';
 import { Component, Inject, PLATFORM_ID, ViewChild } from '@angular/core';
 import { Router, NavigationEnd, NavigationStart, NavigationCancel } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
@@ -9,12 +8,12 @@ import { isPlatformBrowser } from '@angular/common';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  loading;
+  public loading!: boolean;
   @ViewChild('animateChild') animateChild: any;
-  constructor(@Inject(WINDOW) private window: Window, private router: Router, @Inject(PLATFORM_ID) public platformId: string) {
+  constructor(private router: Router, @Inject(PLATFORM_ID) public platformId: string) {
   }
 
-  getPage(outlet) {
+  getPage(outlet: { activatedRouteData: { [x: string]: string; }; }) {
 
     return "main animated " + outlet.activatedRouteData['animation'] || 'bounceInUp';
   }
@@ -30,10 +29,6 @@ export class AppComponent {
           event instanceof NavigationCancel
         ) {
           this.loading = false;
-
-          if (isPlatformBrowser(this.platformId)) {
-            this.window.scrollTo(0, 0);
-          }
         }
       });
   }

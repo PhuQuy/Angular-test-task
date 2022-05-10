@@ -1,52 +1,64 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "src",
     "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
+    "downlevelIteration": true,
     "experimentalDecorators": true,
-    "target": "es5",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2017",
+    "module": "es2020",
     "paths": {
-        "@app/*": [
-          "app/*"
-        ],
-        "@core/*": [
-          "app/core/*"
-        ],
-        "@shared/*": [
-          "app/shared/*"
-        ],
-        "@modules/*": [
-          "app/modules/*"
-        ],
-        "@models/*": [
-          "app/core/models/*"
-        ],
-        "@components/*": [
-          "app/components/*"
-        ],
-        "@config/*": [
-          "config/*"
-        ],
-        "@libs/*": [
-          "libraries/*"
-        ],
-        "@env/*": [
-          "environments/*"
-        ],
-        "@testing/*": [
-          "testing/*"
-        ]
-      },
+      "@app/*": [
+        "app/*"
+      ],
+      "@core/*": [
+        "app/core/*"
+      ],
+      "@shared/*": [
+        "app/shared/*"
+      ],
+      "@modules/*": [
+        "app/modules/*"
+      ],
+      "@models/*": [
+        "app/core/models/*"
+      ],
+      "@components/*": [
+        "app/components/*"
+      ],
+      "@config/*": [
+        "config/*"
+      ],
+      "@libs/*": [
+        "libraries/*"
+      ],
+      "@env/*": [
+        "environments/*"
+      ],
+      "@testing/*": [
+        "testing/*"
+      ]
+    },
     "lib": [
-      "es2017",
+      "es2020",
       "dom"
     ]
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
   }
 }
